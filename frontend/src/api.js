@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? "https://message-builder-api.vercel.app" : "http://localhost:4000");
 
 function getAuthToken() {
   return localStorage.getItem("mb_token") || "";
@@ -76,3 +76,4 @@ export function saveMessage(payload) {
 export function getMessages() {
   return request("/messages");
 }
+
