@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Message Builder - Describe Situation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-slate-900 shadow-xl overflow-x-hidden">
+<!-- Header Section -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-start hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Describe the Situation</h2>
+</div>
+<!-- Progress Bar Section -->
+<div class="flex flex-col gap-3 p-6">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-base font-medium leading-normal">Message Builder</p>
+<p class="text-primary text-sm font-bold leading-normal bg-primary/10 px-3 py-1 rounded-full">Step 3 of 4</p>
+</div>
+<div class="h-2 rounded-full bg-slate-200 dark:bg-slate-700 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Main Content Section -->
+<div class="flex-1 flex flex-col px-6">
+<div class="pt-4 pb-6">
+<h3 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-extrabold leading-tight">What happened?</h3>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">Be specific about the event. This helps the AI understand the context better.</p>
+</div>
+<div class="flex flex-col gap-4 py-3">
+<label class="flex flex-col w-full">
+<textarea class="form-textarea block w-full rounded-xl text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:border-primary focus:ring-2 focus:ring-primary/20 min-h-[240px] placeholder:text-slate-400 dark:placeholder:text-slate-500 p-5 text-base font-normal leading-relaxed transition-all resize-none shadow-sm" placeholder="When you didn't reply to my message yesterday..."></textarea>
+</label>
+</div>
+<!-- Tip Card -->
+<div class="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10 flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">lightbulb</span>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-snug">
+<span class="font-bold text-primary">Pro Tip:</span> Focus on objective facts rather than interpretations. For example, "You were 20 minutes late" instead of "You don't care about my time."
+                </p>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<div class="p-6 sticky bottom-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/30 hover:bg-primary/90 active:scale-[0.98] transition-all">
+<span class="truncate">Continue</span>
+<span class="material-symbols-outlined ml-2" style="font-size: 20px;">chevron_right</span>
+</button>
+<div class="h-4"></div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full max-w-md mx-auto flex-col bg-white dark:bg-background-dark shadow-xl overflow-x-hidden">
+<!-- Header -->
+<div class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-100 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Message Builder</h2>
+</div>
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-3 p-4">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal">Situation</p>
+<p class="text-slate-400 dark:text-slate-500 text-xs font-normal leading-normal uppercase tracking-wider">Step 1 of 7</p>
+</div>
+<div class="rounded-full bg-slate-100 dark:bg-slate-800 h-2 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 14.2%;"></div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1">
+<h3 class="text-slate-900 dark:text-slate-100 tracking-tight text-2xl font-bold leading-tight px-4 text-left pb-4 pt-4">
+                What situation are you messaging about?
+            </h3>
+<!-- Selection Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
+<!-- Option: Feeling Ignored -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm">
+<div class="aspect-[16/9] w-full bg-cover bg-center" data-alt="A person looking out a rainy window feeling lonely" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtmrgqswOPWMwOn1UuutsHtu70cf3Sxqmp2-S0vki3dhOpECQh9g_L99wNvrh4hasO0z0SYF0ywWnaIbun5GNDK26v52r9iASGcS0Eq6__oaZjSYXr-BH09DMe7HI8uK3mKuI3KRGzy-puUpXB9X0v23USn_bdgg2cGUyCBtO0YuuzsOho_bZO2_MSBypcQLkycoagojLMMhzVuDqi4oFhbQodGrpKrpr42w7leSWeY-CMkLeXiKm_gwrdnYLffOCn2Hb6HsC_vzTA");'>
+</div>
+<div class="p-4 pt-0 -mt-8 relative z-10">
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Feeling ignored</p>
+</div>
+</button>
+<!-- Option: Jealousy -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm">
+<div class="aspect-[16/9] w-full bg-cover bg-center" data-alt="Abstract swirls of green and dark colors representing envy" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDI_49vrnm1XUYeYTS4n9gF9emPWdIEwG3oWVGL2oNQ-o4KGHgYz4ZrU3XwE7LmiQK6MUv9Ogbn5y6UUiGMdHIkhzjaTEXirWO9LgEzDYmrRzMH-t9lzRhZLEhcJlRpAyfbp4gf6WEtmDZhda5C4eJeZTMv2dzMTAhKCUUjBzBqpibvK904PyBJ1Gd5OgVhbCFRvICb6_0Gq--t0TdxA6mwB4d4LLlLU4ybJqjRSkqGGvUZ9ZZA-j4L-cyCzMRZHwo3GUFs5hBX60Q-");'>
+</div>
+<div class="p-4 pt-0 -mt-8 relative z-10">
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Jealousy</p>
+</div>
+</button>
+<!-- Option: Needing Reassurance -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm">
+<div class="aspect-[16/9] w-full bg-cover bg-center" data-alt="Two people holding hands gently in support" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKGWT3-3u55EMkOyHGVYavRBS_BZg-6XlECBM-lvgQS6-J2bOH6sIX9dBFqCXy1D9PzoE-Lcjjej2Zmm9G72PW2FnEALcUBcwDtOEhmJIOu85SO6nbxe460jTRq5IbySTDaAyAvG2SzcS8WwEC2X4ACFfUiEZo1TLoNQQLx4RY1gLM_193IJEiGaUbYYaB6qkLpCTYRMbBWJ6pv5BzhVxaDZfxaSMZTg1Xa3-_l6B9xG3rOEzegNlZxRapsQEs_q9wGrG8j7hgxQt8");'>
+</div>
+<div class="p-4 pt-0 -mt-8 relative z-10">
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Needing reassurance</p>
+</div>
+</button>
+<!-- Option: Starting an important conversation -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm">
+<div class="aspect-[16/9] w-full bg-cover bg-center" data-alt="Coffee cups on a table during a serious talk" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOQY3Lty1rMA2ZUeu5y8UhOqEdnv8SWPXoyF5v2ysSf4b7AC5UHMsd7a3OG3HRgQKA8SyO0QHgW7cgaghQUfAoOupJJwXSIC1bu_BYIRPXNMyvHs60CtTk_BUxCbWGqRDQLcXf3Nv13ip0d2MQSRLe2B0PlV5fRZFBM4leUsp15tZmBmPAqMj7EHnj-3NaN8ggpxpPqqzjCOsJ7XjL-ZrfGbzJYhyJDVZyIVyTXDZ5Ld9U0YbZ9tNF0g69pTws2A9suyXJ7vNsWGqU");'>
+</div>
+<div class="p-4 pt-0 -mt-8 relative z-10">
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Starting a conversation</p>
+</div>
+</button>
+<!-- Option: Apologizing -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm">
+<div class="aspect-[16/9] w-full bg-cover bg-center" data-alt="Soft wilting flowers suggesting a heartfelt apology" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvJ13fNFYTy97QXrC3v6zw_RSo9WBoWsR9wiWjctw_wYZgvMUYikLvaQ8f3K0u0eSgI43g5Wf-6qADUPmO2nckabAvAkTTK3-sOUNdXEbjxuKOc4XKyWFsctH1ZXav8nzP6KwIwkViecXvtac1goffakX3BH0zUnlNOUb8-0Jlw1C1n0lNAZdfK7mgv_AcwRvuGjbkKWtbMpUThMK66_hXYVgF31bRfsxQlZlNnLW7n3lzgok6mUewmhKMqhgsrH-yq_qnx89uoi4q");'>
+</div>
+<div class="p-4 pt-0 -mt-8 relative z-10">
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Apologizing</p>
+</div>
+</button>
+<!-- Option: Expressing appreciation -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm">
+<div class="aspect-[16/9] w-full bg-cover bg-center" data-alt="Bright warm light and a gift box" style='background-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0s0JOK2lUI1XTKD_-RLKOZnm9sJKFyyYOW77fvRn-vu3YPMx8EAfzdWU0Jg8pz6-_9sTUf3uFQRQ0HRqLpSdJDOdKLYIStszfs1sFzTreTEz9hyH3XUTIu8EYfacbvmofO611pcvWWwDQRXF1l-FrSxQQvrwnRsQtONgAMJmK3wDkxDWIJAWTxAepJbe9-pG8KvCxFvIdoog2iK_QEpp6zzYtDQOHSr92L4H4tF6wz9K1yFJDvs8fOqvrIDIH3Ylgk8djltB9_EtI");'>
+</div>
+<div class="p-4 pt-0 -mt-8 relative z-10">
+<p class="text-white text-base font-bold leading-tight line-clamp-2">Expressing appreciation</p>
+</div>
+</button>
+<!-- Option: Custom situation -->
+<button class="group relative flex flex-col gap-3 rounded-xl overflow-hidden bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:border-primary/50 focus:border-primary transition-all duration-200 text-left shadow-sm col-span-full">
+<div class="p-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold leading-tight">Custom situation</p>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Footer Button -->
+<div class="flex px-4 py-6 bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800">
+<button class="flex min-w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="truncate">Continue</span>
+</button>
+</div>
+<div class="h-4 bg-white dark:bg-background-dark"></div>
+</div>
+</body></html>

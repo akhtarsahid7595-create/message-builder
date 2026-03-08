@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Header Section -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Message Builder</h2>
+</div>
+<!-- Progress Bar Section -->
+<div class="flex flex-col gap-3 p-6">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal uppercase tracking-wider">Step 2: Emotions</p>
+<p class="text-primary text-sm font-bold leading-normal">2 of 5</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-800 h-2 w-full overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 40%;"></div>
+</div>
+</div>
+<!-- Main Title -->
+<div class="px-6 pt-4 pb-6">
+<h3 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-bold leading-tight text-center">
+                What are you feeling right now?
+            </h3>
+<p class="text-slate-500 dark:text-slate-400 text-center mt-2 text-sm">Select the emotion that best describes your state.</p>
+</div>
+<!-- Emotion Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 px-6 pb-24">
+<!-- Anxious Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-transparent hover:border-primary focus:border-primary transition-all shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="Abstract soft blue ripples representing calm or anxiety" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEJSYSfrZ02kasR9OKwKelY-zIB15ZnAoDaeS5OQ6DjcubbekywI4zrGT9NzjHAZ1BTm7lofmNcWy0PduTrXAQaEQfma6diGMb54BL7ZZCzWJH4ySVnc1iDDJ6EGkcwaREZIF-gtY1yUb78ZmJ24jpTlc_BGb02y04rfs7YBIGjuGhA0bhvSdFxlm97XBidI3M4duFMDUYm26iOKbp8Fl90Bj8jmqZYi59akOHRXeKyuzSXgF1IjfGjlji-ZxhgCWrhD3TuvvG9z9r')"></div>
+<p class="relative z-10 text-slate-900 dark:text-white text-lg font-bold leading-tight text-left">Anxious</p>
+</button>
+<!-- Hurt Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-transparent hover:border-primary focus:border-primary transition-all shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="Dark moody abstract texture with deep reds" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4IfEvUWemrxDr_hbDGNIP-Unw2xxzQbaZ_Lu0aWc17CHHFq3xoIgOMMXjDRoJxrle8VKMd78jqO1EyyhKq3Q29IG9CF9vLGRIEvJhy3y3Jo3dyr1rrsa4SyvoVnYXMcnOdkxK6Pdjk-_5R3aabu502NPAt07w9SgSJ7jptfvVNH--vRI_7MAHCdFN92IKXq3SMsweQ-AeCX6x3CPY9rg1_-UrEstMEPzFa32Tjng0I_cWSNqcHcIGHEzP-OQ2fJvgDuyzsITotwDl')"></div>
+<p class="relative z-10 text-slate-900 dark:text-white text-lg font-bold leading-tight text-left">Hurt</p>
+</button>
+<!-- Lonely Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-transparent hover:border-primary focus:border-primary transition-all shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="Solitary landscape with vast empty space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6lH4yNHv_7JwXsjuVi5d_p2dtVnI256NLwA75tttOgEo9mjVZthvZ7EvKgc41fjdC5shfVJ-8XQGf-YYNMdb2rROJ3QdDeiWNFIthZgAtd1FmoOuzJL4Z-obF9klY73buDlE6MniuVPcMobroVyZaDCsgI3Eh3yHaXn5aw0fHOGtMKAWVb5T-L0chKAzMNCENs14RqfdB1aURXno-nvd1527YOSAM4Mnj7_VD1zpsLTC_atdRz9M1H7Inj2OkDokiz57xAC4I_1AT')"></div>
+<p class="relative z-10 text-slate-900 dark:text-white text-lg font-bold leading-tight text-left">Lonely</p>
+</button>
+<!-- Confused Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-transparent hover:border-primary focus:border-primary transition-all shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="Swirling smoke or galaxy patterns" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAqwxzNO0Wu2unRGzzF3ppZeHoQZfrnR7Cu6I99TbtZy67T0GjLHP5RTFLBobuTEV6ml7quenILt0P5fGaHLJRr7omxmv18Wsb6SW0_H_kS0_3GDT92YImN41Pv-cBx1CiwYQ40whrXwLDxcjqnJEJhJHwlj_KvfXNXxV7YJcRHGAVl30Z2D0OedUOW6k_koxOyEZV-vQ1lLqqyrnacdAdpRbb-2yx6U-ZF63no2C8vPjvLTDpSYkh5Mj6g3czEcaNcDA19svDMtbq')"></div>
+<p class="relative z-10 text-slate-900 dark:text-white text-lg font-bold leading-tight text-left">Confused</p>
+</button>
+<!-- Frustrated Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-transparent hover:border-primary focus:border-primary transition-all shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="High contrast jagged geometric shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaVOylPp2mIH2RyoQddQHbVZXfOAKZCRLY5uJuj9cNjbMrRLoEWFT65Dshblol0ITmbSyLBF_sh7Figfb3LrgMdbO1r55hYHEDJa9Ll5yaW12zBW2vfua6Bxrx0YeLdsHLciyiIYJsgIblTx9Xr9psxl_kMOqOH-GE0SpRsHID_2eAXY7jdyTaC04RmTuTpQe3imwru9PA7CJN2JoIlO6f7UF1cFq7akvkbRnz8NQYOVY1ZYke4hJPzQx7tfjDAJarO93PWvMAR4mm')"></div>
+<p class="relative z-10 text-slate-900 dark:text-white text-lg font-bold leading-tight text-left">Frustrated</p>
+</button>
+<!-- Grateful Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-primary focus:border-primary ring-2 ring-primary transition-all shadow-md">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="Warm sunrise light over a field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkkyLreLlJaFIVSO8suEHxKOoGDrNwv17Pf4umejfmXKRleqdoosSGvXKIIinFL2r0LSFD751zfLdnpnEhUbxyPnC4Zd32quADBRkHVE_HrqsXXY8shys_h0D0ydsR7pmEmkpvoweKg4WOxeUCSIf7XeMdgvah8TjRHABlpNvKj1rQmF7xVADLE6Pu7t1DaG0k8FfoFnRzjaeqlIlSfjkrGClS791z_WMw1JXvvigszMVWfdxfNq28fDjY7obgN95cLLzg7_4k8CBq')"></div>
+<div class="absolute top-3 right-3 bg-primary text-white rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<p class="relative z-10 text-white text-lg font-bold leading-tight text-left">Grateful</p>
+</button>
+<!-- Sad Card -->
+<button class="group relative overflow-hidden bg-white dark:bg-slate-900 flex flex-col gap-3 rounded-xl justify-end p-5 aspect-square border-2 border-transparent hover:border-primary focus:border-primary transition-all shadow-sm">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-full absolute inset-0 bg-slate-100 dark:bg-slate-800 -z-10 bg-cover bg-center" data-alt="Raindrops on a window pane" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADLbSFnImo7rGE7NqpCDVwaAGl0RG4F92RPCxe1I98tLw2PCFBnh616Fai86YW-H8IHJaZrJHTDSfVGZTx6pNHhFxiStItzGqIUyII5xXENuLK_oa_t1hK8hRgwynOfmHhnLCpdbzpOSMQZ3yrc7h4o4OCBDr_JXW4wbQvztRZzf7qtjsCjOrmZJkNZ8G0eGPHmfGFmfgjfSEBFpWG9aDPBGCH87-igzT142jqAoTEe_I5qmRJPpFJBicB2QPEn8k9lIKD4zriIBgh')"></div>
+<p class="relative z-10 text-slate-900 dark:text-white text-lg font-bold leading-tight text-left">Sad</p>
+</button>
+</div>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 flex justify-center border-t border-slate-200 dark:border-slate-800">
+<button class="flex min-w-[320px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+<span class="truncate">Continue</span>
+</button>
+</div>
+</div>
+</body></html>

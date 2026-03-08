@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Builder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: "#1565d8",
+            ink: "#0f172a",
+            mist: "#eef4ff",
+            card: "#ffffff",
+            soft: "#f8fafc"
+          },
+          fontFamily: {
+            display: ["Sora", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    body {
+      min-height: 100dvh;
+      background:
+        radial-gradient(circle at 10% 10%, #d7e7ff 0%, transparent 35%),
+        radial-gradient(circle at 90% 20%, #e6fff5 0%, transparent 30%),
+        linear-gradient(180deg, #f6f9ff 0%, #eef3ff 100%);
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+      animation: fadeIn 260ms ease;
+    }
+    .chip.selected {
+      border-color: #1565d8;
+      background: #eaf2ff;
+      color: #0b4fb2;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="font-display text-ink p-4 md:p-8">
+  <main class="mx-auto max-w-3xl">
+    <section class="rounded-3xl border border-blue-100 bg-white/90 shadow-xl backdrop-blur overflow-hidden">
+      <header class="px-5 md:px-8 py-5 border-b border-slate-100 bg-white">
+        <div class="flex items-center justify-between gap-4">
+          <h1 class="text-xl md:text-2xl font-extrabold tracking-tight">Message Builder</h1>
+          <button id="resetBtn" class="text-sm font-semibold text-brand hover:underline">Reset</button>
+        </div>
+        <div class="mt-4">
+          <div class="flex justify-between text-xs md:text-sm font-semibold text-slate-500">
+            <span id="stepLabel">Home</span>
+            <span id="stepCounter">0 / 7</span>
+          </div>
+          <div class="mt-2 h-2 w-full rounded-full bg-slate-100">
+            <div id="progress" class="h-2 rounded-full bg-brand transition-all duration-300" style="width:0%"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="px-5 md:px-8 py-6 md:py-8 bg-soft min-h-[520px]">
+        <div class="step active" data-step="0">
+          <p class="text-sm font-semibold uppercase tracking-wider text-brand">Welcome</p>
+          <h2 class="mt-2 text-3xl font-extrabold leading-tight">Difficult feeling ko clear message me badlo</h2>
+          <p class="mt-4 text-slate-600">Step by step inputs do, aur app tumhare liye respectful aur calm draft ready karega.</p>
+          <div class="mt-8 grid md:grid-cols-3 gap-3">
+            <div class="rounded-2xl bg-white p-4 border border-slate-200">
+              <p class="font-bold">Situation</p>
+              <p class="text-sm text-slate-600 mt-1">Kya hua tha</p>
+            </div>
+            <div class="rounded-2xl bg-white p-4 border border-slate-200">
+              <p class="font-bold">Feeling</p>
+              <p class="text-sm text-slate-600 mt-1">Tum kya feel kar rahe ho</p>
+            </div>
+            <div class="rounded-2xl bg-white p-4 border border-slate-200">
+              <p class="font-bold">Request</p>
+              <p class="text-sm text-slate-600 mt-1">Aage kya chahiye</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="1">
+          <h2 class="text-2xl font-extrabold">Step 1: Situation choose karo</h2>
+          <p class="text-slate-600 mt-2">Ek option select karo ya custom likho.</p>
+          <div id="situationChips" class="mt-6 grid sm:grid-cols-2 gap-3">
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3 text-left">Feeling ignored</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3 text-left">Jealousy</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3 text-left">Apology</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3 text-left">Need reassurance</button>
+          </div>
+          <input id="customSituation" class="mt-4 w-full rounded-xl border border-slate-300 p-3 bg-white" placeholder="Custom situation..." />
+        </div>
+
+        <div class="step" data-step="2">
+          <h2 class="text-2xl font-extrabold">Step 2: Emotion select karo</h2>
+          <div id="emotionChips" class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3">Anxious</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3">Hurt</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3">Lonely</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3">Confused</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3">Frustrated</button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-3">Grateful</button>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <h2 class="text-2xl font-extrabold">Step 3: Kya hua tha?</h2>
+          <textarea id="eventText" class="mt-5 w-full min-h-[180px] rounded-2xl border border-slate-300 p-4 bg-white" placeholder="Example: Jab tumne kal mera message ignore kiya..."></textarea>
+          <p class="text-xs text-slate-500 mt-2">Tip: facts likho, assumptions avoid karo.</p>
+        </div>
+
+        <div class="step" data-step="4">
+          <h2 class="text-2xl font-extrabold">Step 4: Healthy framework</h2>
+          <div class="mt-5 space-y-3">
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><b>Situation:</b> Jab ___ hua</div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><b>Feeling:</b> Mujhe ___ feel hua</div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><b>Request:</b> Kya hum ___ kar sakte hain?</div>
+          </div>
+        </div>
+
+        <div class="step" data-step="5">
+          <h2 class="text-2xl font-extrabold">Step 5: Tone choose karo</h2>
+          <div id="toneChips" class="mt-5 grid sm:grid-cols-2 gap-3">
+            <button class="chip rounded-xl border border-slate-300 bg-white p-4 text-left"><b>Calm</b><p class="text-sm text-slate-500">Steady and neutral</p></button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-4 text-left"><b>Caring</b><p class="text-sm text-slate-500">Warm and empathetic</p></button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-4 text-left"><b>Apologetic</b><p class="text-sm text-slate-500">Sincere and humble</p></button>
+            <button class="chip rounded-xl border border-slate-300 bg-white p-4 text-left"><b>Supportive</b><p class="text-sm text-slate-500">Encouraging and practical</p></button>
+          </div>
+        </div>
+
+        <div class="step" data-step="6">
+          <h2 class="text-2xl font-extrabold">Step 6: Draft preview</h2>
+          <div class="mt-5 rounded-2xl bg-white border border-slate-200 p-5">
+            <p id="previewText" class="text-slate-700 leading-relaxed">
+              Jab tumne reply nahi kiya, mujhe anxious feel hua. Agar possible ho to short update de diya karo.
+            </p>
+          </div>
+        </div>
+
+        <div class="step" data-step="7">
+          <h2 class="text-3xl font-extrabold">Step 7: Final tip</h2>
+          <div class="mt-5 rounded-2xl border border-blue-200 bg-mist p-5">
+            <p class="font-bold text-brand">Calm + clear = better response.</p>
+            <p class="mt-2 text-slate-700">Send karne se pehle message ko ek baar zor se padh lo. Respectful tone conversation ko safe rakhti hai.</p>
+          </div>
+          <button class="mt-6 w-full rounded-xl bg-brand text-white py-3 font-bold">Finish Message</button>
+        </div>
+      </div>
+
+      <footer class="px-5 md:px-8 py-4 border-t border-slate-100 bg-white flex gap-3">
+        <button id="backBtn" class="flex-1 rounded-xl border border-slate-300 py-3 font-semibold disabled:opacity-40" disabled>Back</button>
+        <button id="nextBtn" class="flex-1 rounded-xl bg-brand text-white py-3 font-semibold">Start</button>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    const stepNames = ["Home", "Situation", "Emotion", "Describe", "Framework", "Tone", "Preview", "Final tip"];
+    const steps = Array.from(document.querySelectorAll(".step"));
+    const progress = document.getElementById("progress");
+    const stepLabel = document.getElementById("stepLabel");
+    const stepCounter = document.getElementById("stepCounter");
+    const backBtn = document.getElementById("backBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const previewText = document.getElementById("previewText");
+    const eventText = document.getElementById("eventText");
+    let current = 0;
+
+    function selectSingle(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.addEventListener("click", (e) => {
+        const button = e.target.closest(".chip");
+        if (!button) return;
+        container.querySelectorAll(".chip").forEach((chip) => chip.classList.remove("selected"));
+        button.classList.add("selected");
+      });
+    }
+
+    function buildPreview() {
+      const selectedSituation = document.querySelector("#situationChips .chip.selected")?.textContent?.trim();
+      const customSituation = document.getElementById("customSituation").value.trim();
+      const selectedEmotion = document.querySelector("#emotionChips .chip.selected")?.textContent?.trim() || "upset";
+      const selectedTone = document.querySelector("#toneChips .chip.selected b")?.textContent?.trim() || "Calm";
+      const eventInfo = eventText.value.trim() || "jab kal conversation incomplete reh gayi";
+      const situation = customSituation || selectedSituation || "ek situation";
+      previewText.textContent = `Tone: ${selectedTone}. Jab ${eventInfo} (${situation}), mujhe ${selectedEmotion.toLowerCase()} feel hua. Kya hum is par calmly baat kar sakte hain?`;
+    }
+
+    function render() {
+      steps.forEach((step, i) => step.classList.toggle("active", i === current));
+      stepLabel.textContent = stepNames[current];
+      stepCounter.textContent = `${Math.max(0, current)} / 7`;
+      progress.style.width = `${(current / 7) * 100}%`;
+      backBtn.disabled = current === 0;
+      nextBtn.textContent = current === 0 ? "Start" : (current === 7 ? "Done" : "Continue");
+      if (current === 6) buildPreview();
+    }
+
+    backBtn.addEventListener("click", () => {
+      if (current > 0) {
+        current -= 1;
+        render();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (current < 7) {
+        current += 1;
+        render();
+      }
+    });
+
+    resetBtn.addEventListener("click", () => {
+      current = 0;
+      document.querySelectorAll(".chip.selected").forEach((chip) => chip.classList.remove("selected"));
+      document.getElementById("customSituation").value = "";
+      eventText.value = "";
+      render();
+    });
+
+    selectSingle("situationChips");
+    selectSingle("emotionChips");
+    selectSingle("toneChips");
+    render();
+  </script>
+</body>
+</html>

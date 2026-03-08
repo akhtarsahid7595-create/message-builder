@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Message Builder - Choose Tone</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#2b6cee",
+                "background-light": "#f6f6f8",
+                "background-dark": "#101622",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .radio-custom:checked + div {
+            border-color: #2b6cee;
+            background-color: rgba(43, 108, 238, 0.05);
+        }
+        .radio-custom:checked + div .icon-box {
+            color: #2b6cee;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex justify-center items-start md:items-center p-0 md:p-4">
+<div class="w-full max-w-md bg-white dark:bg-slate-900 shadow-xl md:rounded-xl overflow-hidden flex flex-col min-h-screen md:min-h-[auto]">
+<div class="flex items-center px-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<button class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight ml-2">Message Builder</h2>
+</div>
+<div class="p-6">
+<div class="flex flex-col gap-2 mb-8">
+<div class="flex justify-between items-end">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold">Tone Selection</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Step 5 of 6</p>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 83.3%;"></div>
+</div>
+</div>
+<div class="mb-8">
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl font-bold tracking-tight mb-2">Choose a Tone</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Select the emotional resonance that best fits your message.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only radio-custom" name="tone" type="radio" value="calm"/>
+<div class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary">
+<div class="icon-box flex size-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-2xl">spa</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Calm</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Peaceful and steady</p>
+</div>
+<div class="opacity-0 peer-checked:opacity-100 text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only radio-custom" name="tone" type="radio" value="caring"/>
+<div class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary">
+<div class="icon-box flex size-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Caring</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Warm and empathetic</p>
+</div>
+<div class="hidden peer-checked:block text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only radio-custom" name="tone" type="radio" value="apologetic"/>
+<div class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary">
+<div class="icon-box flex size-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-2xl">sentiment_dissatisfied</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Apologetic</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Sincere and regretful</p>
+</div>
+<div class="hidden peer-checked:block text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only radio-custom" name="tone" type="radio" value="supportive"/>
+<div class="flex items-center gap-4 p-4 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all peer-checked:border-primary peer-checked:ring-1 peer-checked:ring-primary">
+<div class="icon-box flex size-12 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 transition-colors">
+<span class="material-symbols-outlined text-2xl">handshake</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold">Supportive</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Encouraging and helpful</p>
+</div>
+<div class="hidden peer-checked:block text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<div class="mt-auto p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
+<button class="flex-1 py-3 px-6 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                Back
+            </button>
+<button class="flex-[2] py-4 px-6 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/25 hover:brightness-110 active:scale-[0.98] transition-all">
+                Continue
+            </button>
+</div>
+</div>
+</body></html>

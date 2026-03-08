@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b6cee",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>Message Builder - Step 4</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto min-h-screen bg-white dark:bg-slate-900 shadow-xl flex flex-col">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Message Builder</h2>
+</div>
+<!-- Progress Indicator -->
+<div class="flex flex-col gap-2 p-4 pt-6">
+<div class="flex justify-between items-center">
+<p class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider">Framework Phase</p>
+<p class="text-primary text-sm font-bold">Step 4 of 5</p>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<!-- Header Section -->
+<div class="px-4 pt-4 pb-2">
+<h3 class="text-slate-900 dark:text-slate-100 text-2xl font-extrabold leading-tight">Healthy Message Structure</h3>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal mt-2">
+                    A strong message follows the <span class="text-primary font-semibold">Situation-Feeling-Request</span> framework to ensure clarity and empathy.
+                </p>
+</div>
+<!-- Framework Component Grid -->
+<div class="grid grid-cols-1 gap-3 p-4">
+<div class="flex items-start gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 transition-all hover:border-primary/50">
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-900 dark:text-slate-100 text-base font-bold">Situation</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm">"When I didn't hear from you yesterday..."</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 transition-all hover:border-primary/50">
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-900 dark:text-slate-100 text-base font-bold">Feeling</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm">"...I felt a little anxious."</p>
+</div>
+</div>
+<div class="flex items-start gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 transition-all hover:border-primary/50">
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-slate-900 dark:text-slate-100 text-base font-bold">Request</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm">"I just wanted to check in and make sure everything is okay."</p>
+</div>
+</div>
+</div>
+<!-- Preview Card -->
+<div class="px-4 py-6">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border-2 border-dashed border-primary/30">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-widest">Draft Preview</span>
+</div>
+<p class="text-slate-800 dark:text-slate-200 text-lg italic leading-relaxed font-medium">
+                        "When I didn't hear from you yesterday, I felt a little anxious. I just wanted to check in and make sure everything is okay."
+                    </p>
+<div class="mt-4 flex justify-end">
+<button class="text-primary text-sm font-semibold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-base">edit</span>
+                            Edit Draft
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Button -->
+<div class="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                Continue
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>
