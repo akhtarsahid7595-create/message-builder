@@ -16,9 +16,29 @@ import { generateMessageVariants, validatePayload } from "./messageGenerator.js"
 const app = express();
 const port = process.env.PORT || 4000;
 
+function buildAllowedOrigins() {
+  const fromEnv = String(process.env.FRONTEND_ORIGIN || "")
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+
+  return new Set([
+    ...fromEnv,
+    "http://localhost:5173",
+    "https://messagebuilder-six.vercel.app"
+  ]);
+}
+
+const allowedOrigins = buildAllowedOrigins();
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_ORIGIN || "*"
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.has(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    }
   })
 );
 app.use(express.json());
@@ -170,5 +190,6 @@ if (process.env.VERCEL !== "1") {
 }
 
 export default app;
+
 
 
